@@ -1,0 +1,16 @@
+<div [formGroup]="formCadastroProcessoFornecedor">
+    <mat-form-field appearance="fill">
+      <mat-label>Input & change events</mat-label>
+      <input matInput 
+        [matDatepicker]="picker" 
+        formControlName="validadeInicio" 
+        (dateChange)="addEvent('change', $event)">
+      <mat-hint>MM/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker  (monthSelected)="alteraMesClique($event, picker)"></mat-datepicker>
+    </mat-form-field>
+</div>
+
+<div class="example-events">
+  <div *ngFor="let e of events">{{e}}</div>
+</div>
